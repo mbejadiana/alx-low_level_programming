@@ -1,36 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
-  * main - print triple combos
+  * main - prints three combinations
   * Return: Always 0 (Success)
   */
 int main(void)
 {
-	int i, j, k;
+	int c;
+	int d;
+	int e = 0;
 
-	i = 48;
-	j = 48;
-	k = 48;
-
-	while (i < 58)
+	while (e < 10)
 	{
-		j = i + 1;
-		whie(j < 58)
+		d = 0;
+
+		while (d < 10)
 		{
-			k = j + 1
-			while (k < 58)
+			c = 0;
+			while (c < 10)
 			{
-				putchar(i);
-				putchar(j);
-				putchar(k);
-				if (i < 55 || j < 56 || k < 57)
+				if (c != d && d != e && e < d && d < c)
 				{
-					putchar(44);
-					putchar(32);
+					putchar('0' + e);
+					putchar('0' + d);
+					putchar('0' + c);
+					if (c + d + e != 9 + 8 + 7)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-				k++;
+				c++;
 			}
-			i++;
+			d++;
 		}
-		putchar(10);
-		return (0);
+		e++;
 	}
+	putchar('\n');
+	return (0);
+}
